@@ -1,29 +1,33 @@
-
-import { FlatList, StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Header from '../comonents/header/Header'
-import SearchBar from '../comonents/search/SearchBar'
-import HorizontalList from '../comonents/horizontalList/HorizontalList'
-import TaskCard from '../comonents/cards/TaskCard'
-import { TASKS } from '../utils/StaticData'
+import CalendarComponent from '../comonents/toDosComponents/CalendarComponent'
+import ToDoCard from '../comonents/toDosComponents/card/ToDoCard'
 
 const ListScreen = () => {
   return (
     <View style={styles.mainContainer}>
-      <Header />
-      <SearchBar />
-      <HorizontalList />
-      <FlatList
-        data={TASKS}
-        keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => (
-          <TaskCard 
-            title={item.title} 
-            description={item.description} 
-            status={item.status} 
-          />
-        )}
-        contentContainerStyle={styles.flatListContent}
+      <Header/>
+      <CalendarComponent/>
+      <ToDoCard
+        title="Go for groceries"
+        items={["Cauli flower", "Potato", "Lady finger"]}
+        status="In process"
+      />
+       <ToDoCard
+        title="Go for groceries"
+        items={["Cauli flower", "Potato", "Lady finger"]}
+        status="In process"
+      />
+       <ToDoCard
+        title="Go for groceries"
+        items={["Cauli flower", "Potato", "Lady finger"]}
+        status="In process"
+      />
+       <ToDoCard
+        title="Go for groceries"
+        items={["Cauli flower", "Potato", "Lady finger"]}
+        status="In process"
       />
     </View>
   )
@@ -32,14 +36,12 @@ const ListScreen = () => {
 export default ListScreen
 
 const styles = StyleSheet.create({
-  mainContainer: {
+  mainContainer:{
     flex: 1,
     backgroundColor: '#d4f1f4',
     paddingHorizontal: 10,
-    gap: 20,
+    paddingTop: 10,
+    gap:20,
   },
-  flatListContent: {
-    flexGrow: 1,
-    paddingBottom: 80, // Extra space at bottom
-  },
+  
 })

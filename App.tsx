@@ -1,15 +1,28 @@
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import StackNavigation from './src/navigations/StackNavigation'
-import { NavigationContainer } from '@react-navigation/native'
+import SplashScreen from './src/comonents/spash/SplashScreen'
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      setIsLoading(false)
+    },3000)
+  },[])
+
+  if (isLoading) {
+    return (
+        <>
+        <SplashScreen/>
+        </>
+    );
+}
   return (
-    <NavigationContainer>
       <SafeAreaView style={{ flex: 1 }}>
         <StackNavigation />
       </SafeAreaView>
-    </NavigationContainer>
   )
 }
 
