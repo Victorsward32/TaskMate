@@ -104,4 +104,128 @@ export const notesData = [
     },
   ]
   
+  export const todoData = [
+    {
+      title: "Go for groceries",
+      items: [
+        "Cauliflower",
+        "Potato",
+        "Ladyfinger",
+        "Tomatoes",
+        "Spinach",
+        "Milk",
+        "Eggs",
+        "Bread",
+        "Cheese",
+      ],
+      status: "In process",
+    },
+    {
+      title: "Workout",
+      items: ["Push-ups", "Squats", "Running", "Deadlifts", "Pull-ups", "Plank", "Yoga"],
+      status: "Pending",
+    },
+    {
+      title: "Read a book",
+      items: [
+        "Atomic Habits",
+        "Deep Work",
+        "The Alchemist",
+        "The Subtle Art of Not Giving a F*ck",
+        "Rich Dad Poor Dad",
+        "1984",
+        "Sapiens",
+        "The Psychology of Money",
+      ],
+      status: "Completed",
+    },
+    {
+      title: "Complete React Task",
+      items: [
+        "Build UI",
+        "Fix bugs",
+        "Optimize performance",
+        "Refactor components",
+        "Improve accessibility",
+        "Update dependencies",
+        "Write unit tests",
+        "Deploy to production",
+      ],
+      status: "In process",
+    },
+    {
+      title: "Prepare Lunch",
+      items: ["Rice", "Dal", "Salad", "Paneer Tikka", "Chicken Curry", "Roti", "Curd", "Lassi"],
+      status: "Pending",
+    },
+    {
+      title: "Meeting with Team",
+      items: [
+        "Discuss project",
+        "Review code",
+        "Set deadlines",
+        "Brainstorm ideas",
+        "Allocate tasks",
+        "Check team progress",
+        "Plan next sprint",
+      ],
+      status: "Completed",
+    },
+    {
+      title: "Evening Walk",
+      items: [
+        "Walk 5km",
+        "Stretching",
+        "Hydrate",
+        "Meditate in the park",
+        "Take a pet along",
+        "Listen to a podcast",
+      ],
+      status: "In process",
+    },
+    {
+      title: "Weekend Trip Planning",
+      items: [
+        "Book tickets",
+        "Hotel reservation",
+        "Pack essentials",
+        "Create itinerary",
+        "Check weather forecast",
+        "Reserve restaurants",
+        "Download offline maps",
+        "Arrange transport",
+      ],
+      status: "Pending",
+    },
+    {
+      title: "Pay Bills",
+      items: [
+        "Electricity",
+        "Internet",
+        "Credit card",
+        "Water bill",
+        "Gas bill",
+        "Phone recharge",
+        "Loan EMI",
+        "Insurance premium",
+      ],
+      status: "Completed",
+    },
+    {
+      title: "Family Time",
+      items: [
+        "Movie night",
+        "Board games",
+        "Dinner together",
+        "Family storytelling",
+        "Outdoor picnic",
+        "Photo album review",
+        "Gardening together",
+        "Music session",
+      ],
+      status: "Pending",
+    },
+  ];
+  
+  
   

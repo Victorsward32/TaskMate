@@ -40,7 +40,7 @@ const NotesScreen = () => {
 
 export default NotesScreen
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create({ 
   mainContainer: {
     flex: 1,
     backgroundColor: '#d4f1f4',

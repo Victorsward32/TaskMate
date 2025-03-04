@@ -1,8 +1,17 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Alert } from "react-native";
 
+
+const COLORS = [
+  '#FAD4D8', '#FFD700', '#FFA07A', '#98FB98', '#DDA0DD', 
+  '#87CEEB', '#FFB6C1', '#FFA500', '#E6E6FA', '#B0C4DE'
+];
 const ToDoCard = ({ title, items, status }) => {
   const [selected, setSelected] = useState(false);
+
+  // ✅ Assign a random color to each card (memoized for consistency)
+    const randomColor = useMemo(() => COLORS[Math.floor(Math.random() * COLORS.length)], [])
+  
 
   const handlePress = () => {
     setSelected(!selected);
@@ -25,7 +34,7 @@ const ToDoCard = ({ title, items, status }) => {
         <Text style={styles.statusText}>{status}</Text>
 
         {/* Card Content */}
-        <View style={styles.card}>
+        <View style={[styles.card,{backgroundColor:randomColor}]}>
           <Text style={styles.title}>{title}</Text>
           {items.map((item, index) => (
             <Text key={index} style={styles.item}>
@@ -53,7 +62,7 @@ const styles = StyleSheet.create({
   circle: {
     width: 20,
     height: 20,
-    borderRadius: 10,
+    borderRadius: 10, 
     borderWidth: 2,
     borderColor: "black",
     backgroundColor: "transparent",

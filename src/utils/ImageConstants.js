@@ -8,5 +8,12 @@ export const Icons={
     arrowDownWord:require('../assets/icons/arrow_downward_alt.png'),
     check:require('../assets/icons/check.png'),
     pause:require('../assets/icons/pause.png'),
-    bookMarked:require('../assets/icons/bookmarkAdded.png')
+    bookMarked:require('../assets/icons/bookmarkAdded.png'),
+    attachment:require('../assets/icons/attach_file.png'),
+    editPen:require('../assets/icons/stylus_note.png'),
+    delete:require('../assets/icons/delete.png')
+}
+
+export const Images={
+    nothingToShow:require('../assets/images/logo/nothing.png')
 }

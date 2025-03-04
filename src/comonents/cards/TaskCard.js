@@ -1,6 +1,7 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React, { useMemo } from 'react';
 import { Icons } from '../../utils/ImageConstants';
+import { useNavigation } from '@react-navigation/native';
 
 // 🎨 Define 10 Random Background Colors
 const COLORS = [
@@ -23,11 +24,17 @@ const TaskCard = ({
   date = "12 Sep, 2024", 
   time = "05:20 PM" 
 }) => {
+  const navigation=useNavigation()
   // ✅ Assign a random background color (memoized for consistency)
   const randomColor = useMemo(() => COLORS[Math.floor(Math.random() * COLORS.length)], []);
 
+  const handleNavigation = () =>{
+    navigation.navigate('ShowResult')
+  }
+
   return (
-    <View style={[styles.cardContainer, styles.shadow, { backgroundColor: randomColor }]}>
+    <TouchableOpacity style={[styles.cardContainer, styles.shadow, { backgroundColor: randomColor }]} 
+    activeOpacity={0.7} onPress={()=>{handleNavigation()}}>
       
       {/* 🔹 Header Section */}
       <View style={styles.header}>
@@ -51,7 +58,7 @@ const TaskCard = ({
         <Text style={styles.statusText}>{status}</Text>
       </View>
       
-    </View>
+    </TouchableOpacity>
   );
 };
 
