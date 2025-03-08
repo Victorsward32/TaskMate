@@ -3,7 +3,7 @@ import React from "react";
 import { Icons } from "../../utils/ImageConstants";
 import { colorConstant } from "../../utils/TextConstants";
 
-const Header = () => {
+const Header = ({addOnPress}) => {
   return (
     <View style={styles.mainContainer}>
       {/* Profile & Greeting */}
@@ -13,7 +13,7 @@ const Header = () => {
       </View>
 
       {/* "+" Button */}
-      <TouchableOpacity style={styles.addButton}>
+      <TouchableOpacity style={styles.addButton} onPress={addOnPress}>
         <Text style={styles.addButtonText}>+</Text>
       </TouchableOpacity>
     </View>

@@ -5,8 +5,14 @@ import SearchBar from '../comonents/search/SearchBar'
 import HorizontalList from '../comonents/horizontalList/HorizontalList'
 import NotesCard from '../comonents/cards/NotesCard'
 import { notesData } from '../utils/StaticData'
+import { useNavigation } from '@react-navigation/native'
 
 const NotesScreen = () => {
+  const navigation=useNavigation()
+
+  const handleNavigation =()=>{
+    
+  }
   const renderNoteItem = ({ item }) => (
     <NotesCard
       title={item.title}
@@ -20,7 +26,7 @@ const NotesScreen = () => {
   return (
     <View style={styles.mainContainer}>
       {/* Header & Search Bar */}
-      <Header />
+      <Header addOnPress={()=>{}} />
       <SearchBar />
       <HorizontalList />
 

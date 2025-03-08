@@ -5,11 +5,17 @@ import SearchBar from '../comonents/search/SearchBar'
 import HorizontalList from '../comonents/horizontalList/HorizontalList'
 import TaskCard from '../comonents/cards/TaskCard'
 import { TASKS } from '../utils/StaticData'
+import { useNavigation } from '@react-navigation/native'
 
 const TaskScreen = () => {
+  const navigation=useNavigation()
+  const handleNavigation = ()=>{
+    //----- handle Add Task navigation------/
+    navigation.navigate('AddTasks')
+  }
   return (
     <View style={styles.mainContainer}>
-      <Header />
+      <Header addOnPress={()=>{handleNavigation()}} />
       <SearchBar />
       <HorizontalList />
       <FlatList

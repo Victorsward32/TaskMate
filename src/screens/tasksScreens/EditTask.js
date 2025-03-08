@@ -1,12 +1,15 @@
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, ScrollView } from 'react-native';
 import React, { useState } from 'react';
 import { colorConstant } from '../../utils/TextConstants';
+import CustomButton from '../../comonents/button/CustomButton';
+import ImageSelection from '../../comonents/imageSelection/ImageSelection';
 
 const EditTask = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
 
   const handleSubmit = () => {
+    Alert.alert('submit btn click')
     console.log('Title:', title);
     console.log('Description:', description);
     // Handle submission logic here
@@ -14,7 +17,12 @@ const EditTask = () => {
 
   return (
     <View style={styles.container}>
+    <ScrollView style={{flex:1}} showsVerticalScrollIndicator={false}>
+
       <Text style={styles.headerTxt}>Edit your Task</Text>
+      <View>
+        <ImageSelection  onSelectImage={()=>{Alert.alert('Select Image click')}} />
+      </View>
       
       <View style={styles.subContainer}>
         <Text style={styles.label}>Title</Text>
@@ -34,10 +42,10 @@ const EditTask = () => {
           multiline
         />
       </View>
-
-      <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-        <Text style={styles.buttonText}>Submit</Text>
-      </TouchableOpacity>
+    </ScrollView>
+      <View>
+        <CustomButton title={'Submit Task'} onpress={()=>{handleSubmit()}}/>
+      </View>
     </View>
   );
 };
@@ -81,20 +89,9 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     padding: 10,
     backgroundColor: '#fff',
-    height: 300,
+    height: 200,
     textAlignVertical: 'top',
     marginBottom: 20,
   },
-  button: {
-    backgroundColor: colorConstant.primary,
-    padding: 15,
-    borderRadius: 5,
-    alignItems: 'center',
-    marginBottom:20,
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
+ 
 });
