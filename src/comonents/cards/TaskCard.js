@@ -44,9 +44,9 @@ const TaskCard = ({
         </View>
 
         {/* ✅ Status Icon */}
-        <View style={styles.iconContainer}>
+        {/* <View style={styles.iconContainer}>
           <Image source={Icons.check} style={styles.iconImg} />
-        </View>
+        </View> */}
       </View>
 
       {/* 🔹 Title & Description */}

@@ -19,7 +19,7 @@ const BottomNavigation = () => {
             iconName = Icons.tasks;
           } else if (route.name === 'Notes') {
             iconName = Icons.notes;
-          } else if (route.name === 'List') {
+          } else if (route.name === 'Todo') {
             iconName = Icons.list;
           }
 
@@ -55,7 +55,7 @@ const BottomNavigation = () => {
     >
       <Tab.Screen name='Tasks' component={TaskScreen} />
       <Tab.Screen name='Notes' component={NotesScreen} />
-      <Tab.Screen name='List' component={ListScreen} />
+      <Tab.Screen name='Todo' component={ListScreen} />
     </Tab.Navigator>
   );
 };

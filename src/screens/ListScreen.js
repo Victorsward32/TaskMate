@@ -4,8 +4,14 @@ import Header from '../comonents/header/Header';
 import CalendarComponent from '../comonents/toDosComponents/CalendarComponent';
 import ToDoCard from '../comonents/toDosComponents/card/ToDoCard';
 import { todoData } from '../utils/StaticData';
+import { useNavigation } from '@react-navigation/native';
 
 const ListScreen = () => {
+  const navigation=useNavigation()
+
+  const handleNavigation=()=>{
+    navigation.navigate('AddListScreen')
+  }
 
   const renderToDoItem = ({ item }) => {
     return (
@@ -19,7 +25,7 @@ const ListScreen = () => {
 
   return (
     <View style={styles.mainContainer}>
-      <Header />
+      <Header addOnPress={()=>{handleNavigation()}} />
       <CalendarComponent />
       <View>
         <FlatList

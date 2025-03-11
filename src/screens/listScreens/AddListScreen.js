@@ -1,24 +1,3 @@
-// import { StyleSheet, Text, View } from 'react-native'
-// import React from 'react'
-// import { colorConstant } from '../../utils/TextConstants'
-
-// const ListEditScreen = () => {
-//   return (
-//     <View style={styles.container}>
-//       <Text>Edit your List</Text>
-//     </View>
-//   )
-// }
-
-// export default ListEditScreen
-
-// const styles = StyleSheet.create({
-//   container:{
-//     backgroundColor:colorConstant.BabyBlue,
-//     flex:1,
-//     paddingHorizontal:10
-//   }
-// })                     
 import React, { useState, useRef, useEffect } from 'react';
 import { 
   View, 
@@ -35,7 +14,7 @@ import CustomButton from '../../comonents/button/CustomButton';
 import { colorConstant } from '../../utils/TextConstants';
 import ImageSelection from '../../comonents/imageSelection/ImageSelection';
 
-const ListEditScreen = () => {
+const AddListScreen = () => {
   // State for note data
   const [title, setTitle] = useState('');
   const [notes, setNotes] = useState([{ id: Date.now(), text: '' }]);
@@ -173,7 +152,7 @@ const ListEditScreen = () => {
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
       >
-        <Text style={styles.headerText}>Edit your Todo-List</Text>
+        <Text style={styles.headerText}>Add your Todo-List</Text>
 
         <View>
         <ImageSelection  onSelectImage={()=>{Alert.alert('Select Image click')}} />
@@ -252,7 +231,7 @@ const ListEditScreen = () => {
       {/* Submit Button */}
       <View style={styles.submitContainer}>
         <CustomButton 
-          title="Submit Note" 
+          title="Submit Todo" 
           onpress={handleSubmit} 
         />
       </View>
@@ -332,4 +311,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ListEditScreen;
+export default AddListScreen;

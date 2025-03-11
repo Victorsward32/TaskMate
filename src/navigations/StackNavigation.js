@@ -10,10 +10,11 @@ import EditTask from '../screens/tasksScreens/EditTask.js';
 import ListEditScreen from '../screens/listScreens/ListEditScreen.js';
 import ShowListScreen from '../screens/listScreens/ShowListScreen.js';
 import NotesEditScreen from '../screens/notesScreens/NotesEditScreen.js';
-import NotesResultScreen from '../screens/notesScreens/NotesResultScreen.js';
 import ShowNotesScreen from '../screens/notesScreens/ShowNotesScreen.js';
-import ListResultscreen from '../screens/listScreens/ListResultScreen.js';
-
+import AddListScreen from '../screens/listScreens/AddListScreen.js';
+import AddNotesScreen from '../screens/notesScreens/AddNotesScreen.js';
+import UserProfileScreen from '../screens/userProfile/UserProfileScreen.js';
+       
 const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
@@ -27,17 +28,19 @@ const StackNavigation = () => {
           component={BottomNavigation} 
           options={{ headerShown: false }}  
         />
+        {/* userProfile */}
+        <Stack.Screen name='UserProfile' component={UserProfileScreen} options={{headerShown:false}}/>
         {/* Tasks Screens */}
         <Stack.Screen name='ShowResult' component={ShowTasks}  options={{ headerShown: false }}  />
         <Stack.Screen name='AddTasks' component={AddTasks}  options={{ headerShown: false }}  />
         <Stack.Screen name='EditTask' component={EditTask}  options={{ headerShown: false }}  />
        {/* List screens */}
         <Stack.Screen name='ListEditScreen' component={ListEditScreen}  options={{ headerShown: false }}  />
-        <Stack.Screen name='ListResultscreen' component={ListResultscreen}  options={{ headerShown: false }}  />
+        <Stack.Screen name='AddListScreen' component={AddListScreen}  options={{ headerShown: false }}  />
         <Stack.Screen name='ShowListScreen' component={ShowListScreen}  options={{ headerShown: false }}  />
        {/* Notes Screens */}
         <Stack.Screen name='NotesEditScreen' component={NotesEditScreen}  options={{ headerShown: false }}  />
-        <Stack.Screen name='NotesResultScreen' component={NotesResultScreen}  options={{ headerShown: false }}  />
+        <Stack.Screen name='AddNotesScreen' component={AddNotesScreen}  options={{ headerShown: false }}  />
         <Stack.Screen name='ShowNotesScreen' component={ShowNotesScreen}  options={{ headerShown: false }}  />
       </Stack.Navigator>
     </NavigationContainer>

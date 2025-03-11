@@ -1,17 +1,4 @@
-// import { StyleSheet, Text, View } from 'react-native'
-// import React from 'react'
 
-// const ShowListScreen = () => {
-//   return (
-//     <View>
-//       <Text>ShowListScreen</Text>
-//     </View>
-//   )
-// }
-
-// export default ShowListScreen
-
-// const styles = StyleSheet.create({}) 
 import { Image, StyleSheet, Text, View, ScrollView } from 'react-native'
 import React from 'react'
 import { colorConstant } from '../../utils/TextConstants'
@@ -23,7 +10,7 @@ const ShowListScreen = () => {
   const navigation = useNavigation()
 
   const handleEditNavigation = () => {
-    navigation.navigate('EditTask')
+    navigation.navigate('ListEditScreen')
   }
 
   return (

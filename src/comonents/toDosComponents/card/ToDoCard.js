@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useMemo, useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Alert } from "react-native";
 
@@ -8,16 +9,16 @@ const COLORS = [
 ];
 const ToDoCard = ({ title, items, status }) => {
   const [selected, setSelected] = useState(false);
+  const navigation=useNavigation()
 
   // ✅ Assign a random color to each card (memoized for consistency)
     const randomColor = useMemo(() => COLORS[Math.floor(Math.random() * COLORS.length)], [])
   
 
   const handlePress = () => {
-    setSelected(!selected);
-    if (!selected) {
-      Alert.alert("Card Selected", `You selected: ${title}`);
-    }
+    // setSelected(!selected);
+    navigation.navigate('ShowListScreen')
+   
   };
 
   return (

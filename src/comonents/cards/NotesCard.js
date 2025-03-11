@@ -1,7 +1,8 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Alert, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useState, useCallback, useMemo } from 'react'
 import { Icons } from '../../utils/ImageConstants'
 import { colorConstant } from '../../utils/TextConstants'
+import { useNavigation } from '@react-navigation/native';
 
 const COLORS = [
   '#FAD4D8', '#FFD700', '#FFA07A', '#98FB98', '#DDA0DD', 
@@ -13,33 +14,40 @@ const NotesCard = ({
   content, 
   date, 
   isBookmarked = false, 
-  onBookmarkToggle 
+  onBookmarkToggle ,
+  // navigation
 }) => {
-  const [selected, setSelected] = useState(isBookmarked)
+  const [selected, setSelected] = useState(isBookmarked);
+  const navigation=useNavigation()
 
   // ✅ Assign a random color to each card (memoized for consistency)
   const randomColor = useMemo(() => COLORS[Math.floor(Math.random() * COLORS.length)], [])
 
   const handleBookmarkToggle = useCallback(() => {
     const newStatus = !selected
-    setSelected(newStatus)
     onBookmarkToggle && onBookmarkToggle(newStatus)
+    Alert.alert("Bookmark", newStatus ? "Added to bookmarks" : "Removed from bookmarks");
+    setSelected(newStatus)
+
   }, [selected, onBookmarkToggle])
 
+  const handleNavigation = ()=>{
+    navigation.navigate('ShowNotesScreen')
+  }
   return (
-    <View style={[styles.mainContainer, styles.shadow, { backgroundColor: randomColor }]}>
+    <TouchableOpacity onPress={handleNavigation} delayLongPress={500} onLongPress={handleBookmarkToggle} style={[styles.mainContainer, styles.shadow, { backgroundColor: randomColor }]}>
       
       {/* Title and Bookmark */}
       <View style={styles.titleContainer}>
         <Text style={styles.titleTxt} numberOfLines={2} ellipsizeMode="tail">
           {title}
         </Text>
-        <TouchableOpacity style={styles.bookmarkContainer} onPress={handleBookmarkToggle}>
+        <View style={styles.bookmarkContainer} >
           <Image 
             source={Icons.bookMarked} 
             style={[styles.img, { tintColor: selected ? 'white' : colorConstant.primary }]} 
           />
-        </TouchableOpacity>
+        </View>
       </View>
 
       {/* Note Content */}
@@ -54,7 +62,7 @@ const NotesCard = ({
         <Text style={styles.infoText}>📅 {date}</Text>
       </View>
       
-    </View>
+    </TouchableOpacity>
   )
 }
 

@@ -1,14 +1,21 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity, Alert } from "react-native";
 import React from "react";
 import { Icons } from "../../utils/ImageConstants";
 import { colorConstant } from "../../utils/TextConstants";
+import { useNavigation } from "@react-navigation/native";
 
 const Header = ({addOnPress}) => {
+  const navigation=useNavigation()
+  const handleNavigation=()=>{
+    navigation.navigate('UserProfile')
+  }
   return (
     <View style={styles.mainContainer}>
       {/* Profile & Greeting */}
       <View style={styles.profileSection}>
-        <Image source={Icons.user} style={styles.profileImage} />
+      <TouchableOpacity  onPress={()=>{handleNavigation()}}>
+      <Image source={Icons.user} style={styles.profileImage} />
+      </TouchableOpacity>
         <Text style={styles.greetingText}>Hello, Sumit 👋</Text>
       </View>
 

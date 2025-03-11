@@ -11,6 +11,7 @@ const NotesScreen = () => {
   const navigation=useNavigation()
 
   const handleNavigation =()=>{
+    navigation.navigate('AddNotesScreen')
     
   }
   const renderNoteItem = ({ item }) => (
@@ -26,7 +27,7 @@ const NotesScreen = () => {
   return (
     <View style={styles.mainContainer}>
       {/* Header & Search Bar */}
-      <Header addOnPress={()=>{}} />
+      <Header addOnPress={()=>{handleNavigation()}} />
       <SearchBar />
       <HorizontalList />
 
