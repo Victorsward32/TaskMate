@@ -5,6 +5,7 @@ import CalendarComponent from '../comonents/toDosComponents/CalendarComponent';
 import ToDoCard from '../comonents/toDosComponents/card/ToDoCard';
 import { todoData } from '../utils/StaticData';
 import { useNavigation } from '@react-navigation/native';
+import { taskService } from '../api/apiService';
 
 const ListScreen = () => {
   const navigation=useNavigation()
@@ -13,6 +14,10 @@ const ListScreen = () => {
     navigation.navigate('AddListScreen')
   }
 
+  const handleGetList=()=>{
+
+  }
+  
   const renderToDoItem = ({ item }) => {
     return (
       <ToDoCard

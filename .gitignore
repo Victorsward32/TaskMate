@@ -73,3 +73,9 @@ yarn-error.log
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# ignore env
+.env
+.env.example
+.env.local
+.env.staging

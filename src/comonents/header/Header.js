@@ -16,7 +16,7 @@ const Header = ({addOnPress}) => {
       <TouchableOpacity  onPress={()=>{handleNavigation()}}>
       <Image source={Icons.user} style={styles.profileImage} />
       </TouchableOpacity>
-        <Text style={styles.greetingText}>Hello, Sumit 👋</Text>
+        <Text style={styles.greetingText}>Hello, User 👋</Text>
       </View>
 
       {/* "+" Button */}

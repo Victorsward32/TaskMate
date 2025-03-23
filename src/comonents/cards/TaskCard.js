@@ -24,17 +24,14 @@ const TaskCard = ({
   date = "12 Sep, 2024", 
   time = "05:20 PM" 
 }) => {
-  const navigation=useNavigation()
   // ✅ Assign a random background color (memoized for consistency)
   const randomColor = useMemo(() => COLORS[Math.floor(Math.random() * COLORS.length)], []);
 
-  const handleNavigation = () =>{
-    navigation.navigate('ShowResult')
-  }
+ 
 
   return (
-    <TouchableOpacity style={[styles.cardContainer, styles.shadow, { backgroundColor: randomColor }]} 
-    activeOpacity={0.7} onPress={()=>{handleNavigation()}}>
+    <View style={[styles.cardContainer, styles.shadow, { backgroundColor: randomColor }]} 
+    activeOpacity={0.7} >
       
       {/* 🔹 Header Section */}
       <View style={styles.header}>
@@ -58,7 +55,7 @@ const TaskCard = ({
         <Text style={styles.statusText}>{status}</Text>
       </View>
       
-    </TouchableOpacity>
+    </View>
   );
 };
 

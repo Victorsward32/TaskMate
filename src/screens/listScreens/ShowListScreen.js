@@ -4,7 +4,7 @@ import React from 'react'
 import { colorConstant } from '../../utils/TextConstants'
 import { Icons, Images } from '../../utils/ImageConstants'
 import { useNavigation } from '@react-navigation/native'
-import FloatingActionButton from '../../comonents/floatingActionButton.js/FloatingActionButton '
+import FloatingActionButton from '../../comonents/floatingActionButton/FloatingActionButton '
 
 const ShowListScreen = () => {
   const navigation = useNavigation()
